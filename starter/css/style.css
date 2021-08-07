@@ -26,8 +26,8 @@ body {
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba(126, 213, 111, 0.801),
-      rgba(40, 180, 133, 0.801)
+      rgba(93, 95, 92, 0.801),
+      rgba(73, 77, 75, 0.801)
     ),
     url(../img/hero.jpg);
   background-size: cover;
@@ -50,6 +50,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -62,7 +63,7 @@ body {
 }
 
 .heading-primary-sub {
-  display: block;
+  display: inline-block;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
@@ -74,6 +75,8 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+  backface-visibility: hidden;
 }
 
 @keyframes moveInLeft {
@@ -102,4 +105,26 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 40px;
+  transition: all 0.2s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.btn:active {
+  transform: translateY(-1px);
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
