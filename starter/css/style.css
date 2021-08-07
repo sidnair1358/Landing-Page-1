@@ -64,3 +64,10 @@ body {
   font-weight: 700;
   letter-spacing: 17.4px;
 }
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
