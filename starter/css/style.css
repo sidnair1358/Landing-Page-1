@@ -84,7 +84,7 @@ body {
     opacity: 0;
     transform: translateX(-100px);
   }
-  69% {
+  80% {
     transform: translateX(25px);
   }
   100% {
@@ -98,8 +98,19 @@ body {
     opacity: 0;
     transform: translateX(100px);
   }
-  69% {
+  80% {
     transform: translateX(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveToBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -116,6 +127,7 @@ body {
   border-radius: 40px;
   transition: all 0.2s;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 .btn:hover {
   transform: translateY(-3px);
@@ -127,4 +139,31 @@ body {
 .btn-white {
   background-color: #fff;
   color: #777;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 40px;
+  display: inline-block;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveToBottom 1s ease 0.75s;
+  animation-fill-mode: backwards;
 }
