@@ -7,6 +7,10 @@ Dark green: #28b485
 
 */
 
+$color-primary: #55c57a;
+$color-primary-light: rgba(93, 95, 92, 0.801);
+$color-primary-dark: rgba(73, 77, 75, 0.801);
+
 *,
 *::after,
 *::before {
@@ -31,8 +35,8 @@ body {
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba(93, 95, 92, 0.801),
-      rgba(73, 77, 75, 0.801)
+      $color-primary-light,
+      $color-primary-dark
     ),
     url(../img/hero.jpg);
   background-size: cover;
