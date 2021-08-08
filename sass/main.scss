@@ -10,6 +10,8 @@ Dark green: #28b485
 $color-primary: #55c57a;
 $color-primary-light: rgba(93, 95, 92, 0.801);
 $color-primary-dark: rgba(73, 77, 75, 0.801);
+$color-dark-grey: rgb(77, 75, 75);
+$color-white: white;
 
 *,
 *::after,
@@ -56,7 +58,7 @@ body {
 }
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
   margin-bottom: 6rem;
 }
@@ -136,6 +138,7 @@ body {
   transition: all 0.2s;
   position: relative;
   font-size: 1.6rem;
+  font-weight: 400;
 }
 .btn:hover {
   transform: translateY(-3px);
@@ -146,8 +149,8 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 .btn--white {
-  background-color: #fff;
-  color: #777;
+  background-color: $color-white;
+  color: $color-dark-grey;
 }
 
 .btn::after {
@@ -164,12 +167,13 @@ body {
 }
 
 .btn--white::after {
-  background-color: rgb(255, 255, 255);
+  background-color: $color-white;
 }
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
+  font-weight: 700;
 }
 
 .btn--animated {
