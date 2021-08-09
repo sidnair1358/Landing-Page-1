@@ -12,6 +12,7 @@ $color-primary-light: rgba(93, 95, 92, 0.801);
 $color-primary-dark: rgba(73, 77, 75, 0.801);
 $color-dark-grey: rgb(77, 75, 75);
 $color-white: white;
+$color-black: #000;
 
 *,
 *::after,
@@ -45,51 +46,49 @@ body {
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
-}
 
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
 
-.header__logo {
-  height: 3.5rem;
+  &__logo {
+    height: 3.5rem;
+  }
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    backface-visibility: hidden;
+    filter: blur(1px);
+    -webkit-filter: blur(0);
+  }
 }
 
 .heading-primary {
   color: $color-white;
   text-transform: uppercase;
   margin-bottom: 6rem;
-}
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 3s;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  }
 
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation: moveInLeft 3s;
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.7rem;
-  animation: moveInRight 3s;
-  transform: translateX(-1rem);
-}
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  backface-visibility: hidden;
-  filter: blur(1px);
-  -webkit-filter: blur(0);
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.7rem;
+    animation: moveInRight 3s;
+    transform: translateX(-1rem);
+  }
 }
 
 @keyframes moveInLeft {
@@ -131,55 +130,57 @@ body {
   }
 }
 
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 4rem;
-  transition: all 0.2s;
-  position: relative;
-  font-size: 1.6rem;
-  font-weight: 400;
-}
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-}
-.btn--white {
-  background-color: $color-white;
-  color: $color-dark-grey;
-}
+.btn {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 4rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
 
-.btn::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  border-radius: 4rem;
-  display: inline-block;
-  z-index: -1;
-  transition: all 0.4s;
-}
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba($color-black, 0.2);
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+      font-weight: 700;
+    }
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba($color-black, 0.2);
+  }
+  &--white {
+    background-color: $color-white;
+    color: $color-dark-grey;
 
-.btn--white::after {
-  background-color: $color-white;
-}
+    &::after {
+      background-color: $color-white;
+    }
+  }
 
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-  font-weight: 700;
-}
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 4rem;
+    display: inline-block;
+    z-index: -1;
+    transition: all 0.4s;
+  }
 
-.btn--animated {
-  animation: moveToBottom 1s ease-out 0.75s;
-  animation-fill-mode: backwards;
+  &--animated {
+    animation: moveToBottom 1s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
 }
