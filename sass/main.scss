@@ -61,6 +61,7 @@ body {
   color: $color-white;
   text-transform: uppercase;
   margin-bottom: 6rem;
+  backface-visibility: hidden;
 }
 
 .heading-primary--main {
@@ -86,7 +87,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  backface-visibility: hidden;
 }
 
 @keyframes moveInLeft {
@@ -177,6 +177,6 @@ body {
 }
 
 .btn--animated {
-  animation: moveToBottom 1s ease 0.75s;
+  animation: moveToBottom 1s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
